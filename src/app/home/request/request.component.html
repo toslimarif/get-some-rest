@@ -1,1 +1,54 @@
-<p>request works!</p>
+<section class="title">
+  <h6 class="title-text">REQUEST</h6>
+</section>
+
+<section class="input-form">
+  <form [formGroup]="requestForm">
+    <div class="row">
+
+      <!--METHOD-->
+      <div class="col-lg-2 col-md-3 col-sm-12">
+        <mat-form-field appearance="outline">
+          <mat-label>Method</mat-label>
+          <mat-select formControlName="method">
+            <mat-option
+              *ngFor="let httpMethod of service.httpMethods"
+              value="{{httpMethod}}">
+              {{httpMethod}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <!--URL-->
+      <div class="col-lg-8 col-md-7 col-sm-12">
+        <mat-form-field appearance="outline">
+          <mat-label>URL</mat-label>
+          <input matInput
+                 placeholder="http://api.example.com/v1"
+                 formControlName="url">
+          <button mat-button
+                  *ngIf="requestForm.value.url"
+                  matSuffix
+                  mat-icon-button
+                  aria-label="Clear"
+                  (click)="onResetUrl()">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+
+      <!--ACTION BUTTONS-->
+      <div class="col-lg-2 col-md-2 col-sm-12">
+        <button class="action-btn"
+                mat-flat-button
+                color="primary"
+                [disabled]="!requestForm.valid"
+                (click)="onSendRequest()">
+          SEND
+        </button>
+      </div>
+    </div>
+
+  </form>
+</section>

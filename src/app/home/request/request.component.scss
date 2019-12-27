@@ -1,0 +1,26 @@
+.title {
+  padding: 1rem 0;
+}
+
+.title-text {
+  letter-spacing: 0.25rem;
+  margin: 0;
+}
+
+.input-form {
+  font-size: 12px;
+}
+
+.action-btn {
+  width: 100%;
+  margin-top: 3px!important;
+  line-height: 45px!important;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+:host::ng-deep .mat-form-field-suffix {
+  top: 0.6em!important;
+}

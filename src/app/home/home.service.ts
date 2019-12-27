@@ -4,6 +4,12 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class HomeService {
+  httpMethods: string[];
+  constructor() {
+    this.httpMethods = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTION'];
+  }
 
-  constructor() { }
+  getHttpMethods() {
+    return this.httpMethods;
+  }
 }

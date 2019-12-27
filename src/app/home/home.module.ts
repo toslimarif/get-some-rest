@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RequestComponent } from './request/request.component';
 import { ResponseComponent } from './response/response.component';
+import {SharedModule} from '../shared/shared.module';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,9 @@ import { ResponseComponent } from './response/response.component';
     ResponseComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class HomeModule { }
